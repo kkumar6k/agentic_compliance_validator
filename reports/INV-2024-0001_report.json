@@ -1,0 +1,307 @@
+{
+  "invoice": {
+    "number": "TS/MH/2024/001234",
+    "date": "2024-09-15",
+    "amount": 590000.0,
+    "vendor": {
+      "name": "TechSoft Solutions Private Limited",
+      "gstin": "27AABCT1234F1ZP"
+    }
+  },
+  "validation": {
+    "timestamp": "2026-01-19T15:56:28.786183",
+    "overall_status": "PASS_WITH_WARNINGS",
+    "passed_checks": 23,
+    "failed_checks": 1,
+    "warnings": 2,
+    "average_confidence": 0.9519230769230769,
+    "requires_review": true
+  },
+  "escalation": {
+    "escalated": true,
+    "reasons": [
+      "4 check(s) flagged for review"
+    ]
+  },
+  "categories": {
+    "C": {
+      "name": "Arithmetic & Calculation",
+      "passed": 4,
+      "failed": 0,
+      "warnings": 0,
+      "confidence": 1.0,
+      "checks": [
+        {
+          "id": "C1",
+          "name": "Line Item Amount Calculation",
+          "status": "PASS",
+          "confidence": 1.0,
+          "severity": "MEDIUM",
+          "requires_review": false,
+          "reasoning": "All line item amounts calculated correctly"
+        },
+        {
+          "id": "C2",
+          "name": "Subtotal Matches Line Items",
+          "status": "PASS",
+          "confidence": 1.0,
+          "severity": "MEDIUM",
+          "requires_review": false,
+          "reasoning": "Subtotal \u20b9500000.00 matches sum of line items"
+        },
+        {
+          "id": "C3",
+          "name": "Tax Calculation Accuracy",
+          "status": "PASS",
+          "confidence": 1.0,
+          "severity": "HIGH",
+          "requires_review": false,
+          "reasoning": "Total tax \u20b990000.00 calculated correctly"
+        },
+        {
+          "id": "C10",
+          "name": "Total Amount Calculation",
+          "status": "PASS",
+          "confidence": 1.0,
+          "severity": "CRITICAL",
+          "requires_review": false,
+          "reasoning": "Total amount \u20b9590000.00 calculated correctly"
+        }
+      ]
+    },
+    "B": {
+      "name": "GST Compliance",
+      "passed": 6,
+      "failed": 0,
+      "warnings": 0,
+      "confidence": 0.975,
+      "checks": [
+        {
+          "id": "B1",
+          "name": "GSTIN Format Validation",
+          "status": "PASS",
+          "confidence": 1.0,
+          "severity": "HIGH",
+          "requires_review": false,
+          "reasoning": "Both GSTINs valid: Seller 27AABCT1234F1ZP, Buyer 27AABCF9999K1ZX"
+        },
+        {
+          "id": "B3",
+          "name": "State Code Match",
+          "status": "PASS",
+          "confidence": 0.95,
+          "severity": "MEDIUM",
+          "requires_review": false,
+          "reasoning": "GSTIN state codes match addresses"
+        },
+        {
+          "id": "B4",
+          "name": "HSN/SAC Code Validity",
+          "status": "PASS",
+          "confidence": 1.0,
+          "severity": "MEDIUM",
+          "requires_review": false,
+          "reasoning": "All HSN/SAC codes are valid"
+        },
+        {
+          "id": "B6",
+          "name": "GST Rate Matches HSN/SAC",
+          "status": "PASS",
+          "confidence": 0.9,
+          "severity": "HIGH",
+          "requires_review": false,
+          "reasoning": "GST rates match HSN/SAC codes"
+        },
+        {
+          "id": "B7",
+          "name": "Inter/Intra State Tax Type",
+          "status": "PASS",
+          "confidence": 1.0,
+          "severity": "HIGH",
+          "requires_review": false,
+          "reasoning": "Intrastate transaction: CGST and SGST applied correctly"
+        },
+        {
+          "id": "B8",
+          "name": "Interstate vs Intrastate Classification",
+          "status": "PASS",
+          "confidence": 1.0,
+          "severity": "HIGH",
+          "requires_review": false,
+          "reasoning": "Correctly classified as intrastate (Both in state: 27)"
+        }
+      ]
+    },
+    "A": {
+      "name": "Vendor Validation",
+      "passed": 3,
+      "failed": 0,
+      "warnings": 1,
+      "confidence": 0.95,
+      "checks": [
+        {
+          "id": "A6",
+          "name": "Seller in Vendor Registry",
+          "status": "PASS",
+          "confidence": 0.95,
+          "severity": "MEDIUM",
+          "requires_review": false,
+          "reasoning": "Vendor found: TechSoft Solutions Private Limited (ID: VND001)"
+        },
+        {
+          "id": "A7",
+          "name": "Buyer GSTIN Validation",
+          "status": "PASS",
+          "confidence": 1.0,
+          "severity": "HIGH",
+          "requires_review": false,
+          "reasoning": "Buyer GSTIN matches company GSTIN: 27AABCF9999K1ZX"
+        },
+        {
+          "id": "VENDOR_STATUS",
+          "name": "Vendor Status Check",
+          "status": "PASS",
+          "confidence": 0.95,
+          "severity": "HIGH",
+          "requires_review": false,
+          "reasoning": "Vendor status: ACTIVE"
+        },
+        {
+          "id": "RELATED_PARTY",
+          "name": "Related Party Transaction Check",
+          "status": "WARNING",
+          "confidence": 0.9,
+          "severity": "MEDIUM",
+          "requires_review": true,
+          "reasoning": "Related party transaction detected. Vendor shares PAN AABCT1234F with other entities. Requires higher approval level."
+        }
+      ]
+    },
+    "D": {
+      "name": "TDS Compliance",
+      "passed": 5,
+      "failed": 0,
+      "warnings": 1,
+      "confidence": 0.9500000000000001,
+      "checks": [
+        {
+          "id": "D1",
+          "name": "TDS Section Determination",
+          "status": "WARNING",
+          "confidence": 0.8,
+          "severity": "MEDIUM",
+          "requires_review": true,
+          "reasoning": "TDS may be applicable (Section 194J) but not marked on invoice"
+        },
+        {
+          "id": "D2",
+          "name": "TDS Rate Validation",
+          "status": "PASS",
+          "confidence": 1.0,
+          "severity": "LOW",
+          "requires_review": false,
+          "reasoning": "TDS not applicable - rate validation skipped"
+        },
+        {
+          "id": "D3",
+          "name": "TDS Base Amount",
+          "status": "PASS",
+          "confidence": 1.0,
+          "severity": "LOW",
+          "requires_review": false,
+          "reasoning": "TDS not applicable"
+        },
+        {
+          "id": "D4",
+          "name": "TDS Amount Calculation",
+          "status": "PASS",
+          "confidence": 1.0,
+          "severity": "LOW",
+          "requires_review": false,
+          "reasoning": "TDS not applicable or not deducted"
+        },
+        {
+          "id": "D5",
+          "name": "TDS Threshold Check",
+          "status": "PASS",
+          "confidence": 0.9,
+          "severity": "LOW",
+          "requires_review": false,
+          "reasoning": "TDS section not specified"
+        },
+        {
+          "id": "D6",
+          "name": "Section 206AB Check",
+          "status": "PASS",
+          "confidence": 1.0,
+          "severity": "LOW",
+          "requires_review": false,
+          "reasoning": "TDS not applicable"
+        }
+      ]
+    },
+    "E": {
+      "name": "Policy & Business Rules",
+      "passed": 5,
+      "failed": 1,
+      "warnings": 0,
+      "confidence": 0.9,
+      "checks": [
+        {
+          "id": "E1",
+          "name": "Approval Level Determination",
+          "status": "PASS",
+          "confidence": 0.95,
+          "severity": "MEDIUM",
+          "requires_review": true,
+          "reasoning": "Requires Level 5: CFO Approval (Retrospective invoice; Related party transaction). Amount: \u20b9590,000.00"
+        },
+        {
+          "id": "E2",
+          "name": "Invoice Date Validity",
+          "status": "FAIL",
+          "confidence": 1.0,
+          "severity": "HIGH",
+          "requires_review": true,
+          "reasoning": "Invoice too old: 491 days (max: 180 days)"
+        },
+        {
+          "id": "E3",
+          "name": "PO Reference Validation",
+          "status": "PASS",
+          "confidence": 0.9,
+          "severity": "MEDIUM",
+          "requires_review": false,
+          "reasoning": "PO reference present: PO-2024-IT-0456"
+        },
+        {
+          "id": "E4",
+          "name": "Payment Terms Validation",
+          "status": "PASS",
+          "confidence": 0.85,
+          "severity": "LOW",
+          "requires_review": false,
+          "reasoning": "Payment terms acceptable: Net 30"
+        },
+        {
+          "id": "E5",
+          "name": "Duplicate Invoice Check",
+          "status": "PASS",
+          "confidence": 0.7,
+          "severity": "MEDIUM",
+          "requires_review": false,
+          "reasoning": "No duplicate detected for TS/MH/2024/001234. Note: Full check requires database lookup."
+        },
+        {
+          "id": "E6",
+          "name": "FY Boundary Validation",
+          "status": "PASS",
+          "confidence": 1.0,
+          "severity": "MEDIUM",
+          "requires_review": false,
+          "reasoning": "Invoice within current FY: 2024-04-01 to 2025-03-31"
+        }
+      ]
+    }
+  }
+}

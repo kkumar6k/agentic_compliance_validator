@@ -1,0 +1,59 @@
+# Compliance Validator Configuration
+
+models:
+  orchestrator: gpt-4o-mini
+  extractor: gpt-4o-mini
+  validator: claude-3-5-sonnet-20241022
+  resolver: claude-3-5-sonnet-20241022
+  reporter: gpt-4o-mini
+  embedding: text-embedding-3-small
+
+thresholds:
+  confidence: 0.70
+  high_value: 1000000
+  
+validation:
+  categories:
+    - id: A
+      name: Document Authenticity
+      checks: 8
+      enabled: true
+    - id: B
+      name: GST Compliance
+      checks: 18
+      enabled: true
+    - id: C
+      name: Arithmetic
+      checks: 10
+      enabled: true
+    - id: D
+      name: TDS Compliance
+      checks: 12
+      enabled: true
+    - id: E
+      name: Policy & Business Rules
+      checks: 10
+      enabled: true
+
+escalation:
+  low_confidence_threshold: 0.70
+  high_value_threshold: 1000000
+  first_time_vendor: true
+  regulatory_ambiguity: true
+  conflict_detected: true
+
+data:
+  dir: ./data
+  test_invoices: test_invoices.json
+  vendor_registry: vendor_registry.json
+  gst_rates: gst_rates_schedule.csv
+  hsn_codes: hsn_sac_codes.json
+  tds_sections: tds_sections.json
+  company_policy: company_policy.yaml
+  historical_decisions: historical_decisions.jsonl
+
+rag:
+  chunk_size: 500
+  chunk_overlap: 50
+  retrieval_k: 4
+  persist_dir: ./chroma_db

@@ -1,0 +1,2437 @@
+{
+  "invoice_id": "INV-2024-0001",
+  "invoice_data": {
+    "invoice_id": "INV-2024-0001",
+    "invoice_number": "TS/MH/2024/001234",
+    "invoice_date": "2024-09-15",
+    "vendor": {
+      "name": "TechSoft Solutions Private Limited",
+      "gstin": "27AABCT1234F1ZP",
+      "pan": "AABCT1234F",
+      "address": "Unit 405, Tech Park, Andheri East, Mumbai - 400069"
+    },
+    "buyer": {
+      "name": "FinanceGuard Solutions Private Limited",
+      "gstin": "27AABCF9999K1ZX",
+      "address": "Tower A, Mindspace, Goregaon East, Mumbai - 400063"
+    },
+    "line_items": [
+      {
+        "description": "Software Development Services - CRM Module",
+        "hsn_sac": "998315",
+        "quantity": 1,
+        "unit": "Project",
+        "rate": 500000,
+        "amount": 500000
+      }
+    ],
+    "subtotal": 500000,
+    "cgst_rate": 9,
+    "cgst_amount": 45000,
+    "sgst_rate": 9,
+    "sgst_amount": 45000,
+    "igst_rate": 0,
+    "igst_amount": 0,
+    "total_tax": 90000,
+    "total_amount": 590000,
+    "irn": "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6a7b8",
+    "irn_date": "2024-09-15",
+    "qr_code_present": true,
+    "payment_terms": "Net 30",
+    "po_reference": "PO-2024-IT-0456",
+    "notes": "As per MSA dated 01-Apr-2024",
+    "_test_category": "STANDARD_VALID",
+    "_expected_result": "PASS",
+    "_complexity": "LOW"
+  },
+  "all_checks": [
+    {
+      "check_id": "C1",
+      "check_name": "Line Item Amount Calculation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "All line item amounts calculated correctly",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "C2",
+      "check_name": "Subtotal Matches Line Items",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Subtotal \u20b9500000.00 matches sum of line items",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "C3",
+      "check_name": "Tax Calculation Accuracy",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Total tax \u20b990000.00 calculated correctly",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "C10",
+      "check_name": "Total Amount Calculation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Total amount \u20b9590000.00 calculated correctly",
+      "severity": "CRITICAL",
+      "requires_review": false
+    },
+    {
+      "check_id": "A1",
+      "check_name": "Invoice Number Format",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Invoice number format valid: \"TS/MH/2024/001234\" (contains year identifier)",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "A2",
+      "check_name": "Duplicate Invoice Detection",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "No duplicate detected for invoice TS/MH/2024/001234",
+      "severity": "CRITICAL",
+      "requires_review": false
+    },
+    {
+      "check_id": "A3",
+      "check_name": "Sequential Invoice Number Analysis",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Invoice sequence acceptable: 1234 (gap of 0 from previous 1234)",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "A4",
+      "check_name": "Digital Signature Verification",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Digital authentication present: IRN QR code",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "A5",
+      "check_name": "Invoice Date Consistency",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Invoice date matches IRN date: 2024-09-15",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "A6",
+      "check_name": "Seller Verification",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Seller verified: TechSoft Solutions Private Limited matches vendor registry",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "A7",
+      "check_name": "Buyer GSTIN Verification",
+      "status": "FAIL",
+      "confidence": 0.95,
+      "reasoning": "Buyer GSTIN mismatch: Invoice shows 27AABCF9999K1ZX, company GSTIN is 27AABCU9603R1ZM",
+      "severity": "CRITICAL",
+      "requires_review": true
+    },
+    {
+      "check_id": "A8",
+      "check_name": "Tampering Detection",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Structured data format (json). No tampering concerns.",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B1",
+      "check_name": "GSTIN Format Validation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Both GSTINs valid: Seller 27AABCT1234F1ZP, Buyer 27AABCF9999K1ZX",
+      "severity": "CRITICAL",
+      "requires_review": false
+    },
+    {
+      "check_id": "B2",
+      "check_name": "GSTIN Active Status",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Seller GSTIN 27AABCT1234F1ZP is active in vendor registry",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "B3",
+      "check_name": "State Code Match",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "State code 27 matches seller state Maharashtra",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B4",
+      "check_name": "HSN/SAC Code Validity",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "All 1 HSN/SAC codes are valid",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B5",
+      "check_name": "HSN-Description Match",
+      "status": "FAIL",
+      "confidence": 0.8,
+      "reasoning": "Multiple HSN misclassifications detected (1 items)",
+      "severity": "HIGH",
+      "requires_review": true
+    },
+    {
+      "check_id": "B6",
+      "check_name": "GST Rate Match",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "All GST rates match HSN/SAC schedules",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "B7",
+      "check_name": "Tax Rate Equation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Intrastate: CGST (\u20b945000.00) = SGST (\u20b945000.00)",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B8",
+      "check_name": "Interstate vs Intrastate",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Intrastate supply (27): CGST+SGST correctly applied",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "B9",
+      "check_name": "Place of Supply",
+      "status": "WARNING",
+      "confidence": 0.75,
+      "reasoning": "Place of supply not specified on invoice",
+      "severity": "MEDIUM",
+      "requires_review": true
+    },
+    {
+      "check_id": "B10",
+      "check_name": "Reverse Charge Mechanism",
+      "status": "PASS",
+      "confidence": 0.85,
+      "reasoning": "RCM status appropriate: Not required",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B11",
+      "check_name": "Composition Scheme",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Regular GST dealer - normal taxation applies",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B12",
+      "check_name": "E-Invoice Mandate",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "E-invoice present (good practice)",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B13",
+      "check_name": "QR Code Verification",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "QR code present for verification",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B14",
+      "check_name": "IRN Hash Verification",
+      "status": "FAIL",
+      "confidence": 0.95,
+      "reasoning": "Invalid IRN format: 56 characters (expected 64)",
+      "severity": "HIGH",
+      "requires_review": true
+    },
+    {
+      "check_id": "B15",
+      "check_name": "E-Invoice Value Threshold",
+      "status": "PASS",
+      "confidence": 0.8,
+      "reasoning": "Invoice value \u20b9590,000.00: E-invoice status appropriate",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B16",
+      "check_name": "Export Compliance",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Not an export invoice - export compliance not applicable",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B17",
+      "check_name": "SEZ Supply Validation",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Not a SEZ supply - SEZ rules not applicable",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B18",
+      "check_name": "ITC Eligibility",
+      "status": "PASS",
+      "confidence": 0.85,
+      "reasoning": "Invoice eligible for ITC: \u20b990,000.00 (subject to supplier compliance)",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "E1",
+      "check_name": "Approval Level Determination",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Requires Level 5: CFO Approval (Retrospective invoice; Related party transaction). Amount: \u20b9590,000.00",
+      "severity": "MEDIUM",
+      "requires_review": true
+    },
+    {
+      "check_id": "E2",
+      "check_name": "Invoice Date Validity",
+      "status": "FAIL",
+      "confidence": 1.0,
+      "reasoning": "Invoice too old: 491 days (max: 180 days)",
+      "severity": "HIGH",
+      "requires_review": true
+    },
+    {
+      "check_id": "E3",
+      "check_name": "PO Reference Validation",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "PO reference present: PO-2024-IT-0456",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "E4",
+      "check_name": "Payment Terms Validation",
+      "status": "PASS",
+      "confidence": 0.85,
+      "reasoning": "Payment terms acceptable: Net 30",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "E5",
+      "check_name": "Duplicate Invoice Check",
+      "status": "PASS",
+      "confidence": 0.7,
+      "reasoning": "No duplicate detected for TS/MH/2024/001234. Note: Full check requires database lookup.",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "E6",
+      "check_name": "FY Boundary Validation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Invoice within current FY: 2024-04-01 to 2025-03-31",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "D1",
+      "check_name": "TDS Applicability",
+      "status": "FAIL",
+      "confidence": 0.85,
+      "reasoning": "TDS should apply but not marked. Reasons: Amount \u20b9590,000.00 exceeds basic threshold; Service detected: Software Development Services ",
+      "severity": "CRITICAL",
+      "requires_review": true
+    },
+    {
+      "check_id": "D2",
+      "check_name": "TDS Section Determination",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - section determination not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D3",
+      "check_name": "TDS Rate (PAN-based)",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - rate validation not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D4",
+      "check_name": "Lower Deduction Certificate",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - certificate not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D5",
+      "check_name": "TDS Threshold Limit",
+      "status": "FAIL",
+      "confidence": 0.9,
+      "reasoning": "Above threshold: \u20b9590,000.00 > \u20b930,000 - TDS should apply",
+      "severity": "HIGH",
+      "requires_review": true
+    },
+    {
+      "check_id": "D6",
+      "check_name": "Aggregate Threshold Tracking",
+      "status": "PASS",
+      "confidence": 0.8,
+      "reasoning": "TDS not applicable - aggregate tracking not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D7",
+      "check_name": "TDS on GST Component",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - GST treatment not relevant",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D8",
+      "check_name": "Non-Resident TDS Rules",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Resident Indian vendor - non-resident rules not applicable",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D9",
+      "check_name": "TAN Validation",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - TAN not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D10",
+      "check_name": "Section 206AB Higher Rate",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - Section 206AB not relevant",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D11",
+      "check_name": "TDS Certificate Availability",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - certificate not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D12",
+      "check_name": "Quarterly Reconciliation",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - reconciliation not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "A6",
+      "check_name": "Seller in Vendor Registry",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Vendor found: TechSoft Solutions Private Limited (ID: VND001)",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "A7",
+      "check_name": "Buyer GSTIN Validation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Buyer GSTIN matches company GSTIN: 27AABCF9999K1ZX",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "VENDOR_STATUS",
+      "check_name": "Vendor Status Check",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Vendor status: ACTIVE",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "RELATED_PARTY",
+      "check_name": "Related Party Transaction Check",
+      "status": "WARNING",
+      "confidence": 0.9,
+      "reasoning": "Related party transaction detected. Vendor shares PAN AABCT1234F with other entities. Requires higher approval level.",
+      "severity": "MEDIUM",
+      "requires_review": true
+    },
+    {
+      "check_id": "C1",
+      "check_name": "Line Item Amount Calculation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "All line item amounts calculated correctly",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "C2",
+      "check_name": "Subtotal Matches Line Items",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Subtotal \u20b9500000.00 matches sum of line items",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "C3",
+      "check_name": "Tax Calculation Accuracy",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Total tax \u20b990000.00 calculated correctly",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "C10",
+      "check_name": "Total Amount Calculation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Total amount \u20b9590000.00 calculated correctly",
+      "severity": "CRITICAL",
+      "requires_review": false
+    },
+    {
+      "check_id": "A1",
+      "check_name": "Invoice Number Format",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Invoice number format valid: \"TS/MH/2024/001234\" (contains year identifier)",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "A2",
+      "check_name": "Duplicate Invoice Detection",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "No duplicate detected for invoice TS/MH/2024/001234",
+      "severity": "CRITICAL",
+      "requires_review": false
+    },
+    {
+      "check_id": "A3",
+      "check_name": "Sequential Invoice Number Analysis",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Invoice sequence acceptable: 1234 (gap of 0 from previous 1234)",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "A4",
+      "check_name": "Digital Signature Verification",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Digital authentication present: IRN QR code",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "A5",
+      "check_name": "Invoice Date Consistency",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Invoice date matches IRN date: 2024-09-15",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "A6",
+      "check_name": "Seller Verification",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Seller verified: TechSoft Solutions Private Limited matches vendor registry",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "A7",
+      "check_name": "Buyer GSTIN Verification",
+      "status": "FAIL",
+      "confidence": 0.95,
+      "reasoning": "Buyer GSTIN mismatch: Invoice shows 27AABCF9999K1ZX, company GSTIN is 27AABCU9603R1ZM",
+      "severity": "CRITICAL",
+      "requires_review": true
+    },
+    {
+      "check_id": "A8",
+      "check_name": "Tampering Detection",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Structured data format (json). No tampering concerns.",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B1",
+      "check_name": "GSTIN Format Validation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Both GSTINs valid: Seller 27AABCT1234F1ZP, Buyer 27AABCF9999K1ZX",
+      "severity": "CRITICAL",
+      "requires_review": false
+    },
+    {
+      "check_id": "B2",
+      "check_name": "GSTIN Active Status",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Seller GSTIN 27AABCT1234F1ZP is active in vendor registry",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "B3",
+      "check_name": "State Code Match",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "State code 27 matches seller state Maharashtra",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B4",
+      "check_name": "HSN/SAC Code Validity",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "All 1 HSN/SAC codes are valid",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B5",
+      "check_name": "HSN-Description Match",
+      "status": "FAIL",
+      "confidence": 0.8,
+      "reasoning": "Multiple HSN misclassifications detected (1 items)",
+      "severity": "HIGH",
+      "requires_review": true
+    },
+    {
+      "check_id": "B6",
+      "check_name": "GST Rate Match",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "All GST rates match HSN/SAC schedules",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "B7",
+      "check_name": "Tax Rate Equation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Intrastate: CGST (\u20b945000.00) = SGST (\u20b945000.00)",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B8",
+      "check_name": "Interstate vs Intrastate",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Intrastate supply (27): CGST+SGST correctly applied",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "B9",
+      "check_name": "Place of Supply",
+      "status": "WARNING",
+      "confidence": 0.75,
+      "reasoning": "Place of supply not specified on invoice",
+      "severity": "MEDIUM",
+      "requires_review": true
+    },
+    {
+      "check_id": "B10",
+      "check_name": "Reverse Charge Mechanism",
+      "status": "PASS",
+      "confidence": 0.85,
+      "reasoning": "RCM status appropriate: Not required",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B11",
+      "check_name": "Composition Scheme",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Regular GST dealer - normal taxation applies",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B12",
+      "check_name": "E-Invoice Mandate",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "E-invoice present (good practice)",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B13",
+      "check_name": "QR Code Verification",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "QR code present for verification",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B14",
+      "check_name": "IRN Hash Verification",
+      "status": "FAIL",
+      "confidence": 0.95,
+      "reasoning": "Invalid IRN format: 56 characters (expected 64)",
+      "severity": "HIGH",
+      "requires_review": true
+    },
+    {
+      "check_id": "B15",
+      "check_name": "E-Invoice Value Threshold",
+      "status": "PASS",
+      "confidence": 0.8,
+      "reasoning": "Invoice value \u20b9590,000.00: E-invoice status appropriate",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B16",
+      "check_name": "Export Compliance",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Not an export invoice - export compliance not applicable",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B17",
+      "check_name": "SEZ Supply Validation",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Not a SEZ supply - SEZ rules not applicable",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B18",
+      "check_name": "ITC Eligibility",
+      "status": "PASS",
+      "confidence": 0.85,
+      "reasoning": "Invoice eligible for ITC: \u20b990,000.00 (subject to supplier compliance)",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "E1",
+      "check_name": "Approval Level Determination",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Requires Level 5: CFO Approval (Retrospective invoice; Related party transaction). Amount: \u20b9590,000.00",
+      "severity": "MEDIUM",
+      "requires_review": true
+    },
+    {
+      "check_id": "E2",
+      "check_name": "Invoice Date Validity",
+      "status": "FAIL",
+      "confidence": 1.0,
+      "reasoning": "Invoice too old: 491 days (max: 180 days)",
+      "severity": "HIGH",
+      "requires_review": true
+    },
+    {
+      "check_id": "E3",
+      "check_name": "PO Reference Validation",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "PO reference present: PO-2024-IT-0456",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "E4",
+      "check_name": "Payment Terms Validation",
+      "status": "PASS",
+      "confidence": 0.85,
+      "reasoning": "Payment terms acceptable: Net 30",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "E5",
+      "check_name": "Duplicate Invoice Check",
+      "status": "PASS",
+      "confidence": 0.7,
+      "reasoning": "No duplicate detected for TS/MH/2024/001234. Note: Full check requires database lookup.",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "E6",
+      "check_name": "FY Boundary Validation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Invoice within current FY: 2024-04-01 to 2025-03-31",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "D1",
+      "check_name": "TDS Applicability",
+      "status": "FAIL",
+      "confidence": 0.85,
+      "reasoning": "TDS should apply but not marked. Reasons: Amount \u20b9590,000.00 exceeds basic threshold; Service detected: Software Development Services ",
+      "severity": "CRITICAL",
+      "requires_review": true
+    },
+    {
+      "check_id": "D2",
+      "check_name": "TDS Section Determination",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - section determination not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D3",
+      "check_name": "TDS Rate (PAN-based)",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - rate validation not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D4",
+      "check_name": "Lower Deduction Certificate",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - certificate not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D5",
+      "check_name": "TDS Threshold Limit",
+      "status": "FAIL",
+      "confidence": 0.9,
+      "reasoning": "Above threshold: \u20b9590,000.00 > \u20b930,000 - TDS should apply",
+      "severity": "HIGH",
+      "requires_review": true
+    },
+    {
+      "check_id": "D6",
+      "check_name": "Aggregate Threshold Tracking",
+      "status": "PASS",
+      "confidence": 0.8,
+      "reasoning": "TDS not applicable - aggregate tracking not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D7",
+      "check_name": "TDS on GST Component",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - GST treatment not relevant",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D8",
+      "check_name": "Non-Resident TDS Rules",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Resident Indian vendor - non-resident rules not applicable",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D9",
+      "check_name": "TAN Validation",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - TAN not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D10",
+      "check_name": "Section 206AB Higher Rate",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - Section 206AB not relevant",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D11",
+      "check_name": "TDS Certificate Availability",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - certificate not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D12",
+      "check_name": "Quarterly Reconciliation",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - reconciliation not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "A6",
+      "check_name": "Seller in Vendor Registry",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Vendor found: TechSoft Solutions Private Limited (ID: VND001)",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "A7",
+      "check_name": "Buyer GSTIN Validation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Buyer GSTIN matches company GSTIN: 27AABCF9999K1ZX",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "VENDOR_STATUS",
+      "check_name": "Vendor Status Check",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Vendor status: ACTIVE",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "RELATED_PARTY",
+      "check_name": "Related Party Transaction Check",
+      "status": "WARNING",
+      "confidence": 0.9,
+      "reasoning": "Related party transaction detected. Vendor shares PAN AABCT1234F with other entities. Requires higher approval level.",
+      "severity": "MEDIUM",
+      "requires_review": true
+    },
+    {
+      "check_id": "C1",
+      "check_name": "Line Item Amount Calculation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "All line item amounts calculated correctly",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "C2",
+      "check_name": "Subtotal Matches Line Items",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Subtotal \u20b9500000.00 matches sum of line items",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "C3",
+      "check_name": "Tax Calculation Accuracy",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Total tax \u20b990000.00 calculated correctly",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "C10",
+      "check_name": "Total Amount Calculation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Total amount \u20b9590000.00 calculated correctly",
+      "severity": "CRITICAL",
+      "requires_review": false
+    },
+    {
+      "check_id": "A1",
+      "check_name": "Invoice Number Format",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Invoice number format valid: \"TS/MH/2024/001234\" (contains year identifier)",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "A2",
+      "check_name": "Duplicate Invoice Detection",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "No duplicate detected for invoice TS/MH/2024/001234",
+      "severity": "CRITICAL",
+      "requires_review": false
+    },
+    {
+      "check_id": "A3",
+      "check_name": "Sequential Invoice Number Analysis",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Invoice sequence acceptable: 1234 (gap of 0 from previous 1234)",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "A4",
+      "check_name": "Digital Signature Verification",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Digital authentication present: IRN QR code",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "A5",
+      "check_name": "Invoice Date Consistency",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Invoice date matches IRN date: 2024-09-15",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "A6",
+      "check_name": "Seller Verification",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Seller verified: TechSoft Solutions Private Limited matches vendor registry",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "A7",
+      "check_name": "Buyer GSTIN Verification",
+      "status": "FAIL",
+      "confidence": 0.95,
+      "reasoning": "Buyer GSTIN mismatch: Invoice shows 27AABCF9999K1ZX, company GSTIN is 27AABCU9603R1ZM",
+      "severity": "CRITICAL",
+      "requires_review": true
+    },
+    {
+      "check_id": "A8",
+      "check_name": "Tampering Detection",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Structured data format (json). No tampering concerns.",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B1",
+      "check_name": "GSTIN Format Validation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Both GSTINs valid: Seller 27AABCT1234F1ZP, Buyer 27AABCF9999K1ZX",
+      "severity": "CRITICAL",
+      "requires_review": false
+    },
+    {
+      "check_id": "B2",
+      "check_name": "GSTIN Active Status",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Seller GSTIN 27AABCT1234F1ZP is active in vendor registry",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "B3",
+      "check_name": "State Code Match",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "State code 27 matches seller state Maharashtra",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B4",
+      "check_name": "HSN/SAC Code Validity",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "All 1 HSN/SAC codes are valid",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B5",
+      "check_name": "HSN-Description Match",
+      "status": "FAIL",
+      "confidence": 0.8,
+      "reasoning": "Multiple HSN misclassifications detected (1 items)",
+      "severity": "HIGH",
+      "requires_review": true
+    },
+    {
+      "check_id": "B6",
+      "check_name": "GST Rate Match",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "All GST rates match HSN/SAC schedules",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "B7",
+      "check_name": "Tax Rate Equation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Intrastate: CGST (\u20b945000.00) = SGST (\u20b945000.00)",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B8",
+      "check_name": "Interstate vs Intrastate",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Intrastate supply (27): CGST+SGST correctly applied",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "B9",
+      "check_name": "Place of Supply",
+      "status": "WARNING",
+      "confidence": 0.75,
+      "reasoning": "Place of supply not specified on invoice",
+      "severity": "MEDIUM",
+      "requires_review": true
+    },
+    {
+      "check_id": "B10",
+      "check_name": "Reverse Charge Mechanism",
+      "status": "PASS",
+      "confidence": 0.85,
+      "reasoning": "RCM status appropriate: Not required",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B11",
+      "check_name": "Composition Scheme",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Regular GST dealer - normal taxation applies",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B12",
+      "check_name": "E-Invoice Mandate",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "E-invoice present (good practice)",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B13",
+      "check_name": "QR Code Verification",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "QR code present for verification",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B14",
+      "check_name": "IRN Hash Verification",
+      "status": "FAIL",
+      "confidence": 0.95,
+      "reasoning": "Invalid IRN format: 56 characters (expected 64)",
+      "severity": "HIGH",
+      "requires_review": true
+    },
+    {
+      "check_id": "B15",
+      "check_name": "E-Invoice Value Threshold",
+      "status": "PASS",
+      "confidence": 0.8,
+      "reasoning": "Invoice value \u20b9590,000.00: E-invoice status appropriate",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B16",
+      "check_name": "Export Compliance",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Not an export invoice - export compliance not applicable",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B17",
+      "check_name": "SEZ Supply Validation",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Not a SEZ supply - SEZ rules not applicable",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B18",
+      "check_name": "ITC Eligibility",
+      "status": "PASS",
+      "confidence": 0.85,
+      "reasoning": "Invoice eligible for ITC: \u20b990,000.00 (subject to supplier compliance)",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "E1",
+      "check_name": "Approval Level Determination",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Requires Level 5: CFO Approval (Retrospective invoice; Related party transaction). Amount: \u20b9590,000.00",
+      "severity": "MEDIUM",
+      "requires_review": true
+    },
+    {
+      "check_id": "E2",
+      "check_name": "Invoice Date Validity",
+      "status": "FAIL",
+      "confidence": 1.0,
+      "reasoning": "Invoice too old: 491 days (max: 180 days)",
+      "severity": "HIGH",
+      "requires_review": true
+    },
+    {
+      "check_id": "E3",
+      "check_name": "PO Reference Validation",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "PO reference present: PO-2024-IT-0456",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "E4",
+      "check_name": "Payment Terms Validation",
+      "status": "PASS",
+      "confidence": 0.85,
+      "reasoning": "Payment terms acceptable: Net 30",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "E5",
+      "check_name": "Duplicate Invoice Check",
+      "status": "PASS",
+      "confidence": 0.7,
+      "reasoning": "No duplicate detected for TS/MH/2024/001234. Note: Full check requires database lookup.",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "E6",
+      "check_name": "FY Boundary Validation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Invoice within current FY: 2024-04-01 to 2025-03-31",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "D1",
+      "check_name": "TDS Applicability",
+      "status": "FAIL",
+      "confidence": 0.85,
+      "reasoning": "TDS should apply but not marked. Reasons: Amount \u20b9590,000.00 exceeds basic threshold; Service detected: Software Development Services ",
+      "severity": "CRITICAL",
+      "requires_review": true
+    },
+    {
+      "check_id": "D2",
+      "check_name": "TDS Section Determination",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - section determination not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D3",
+      "check_name": "TDS Rate (PAN-based)",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - rate validation not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D4",
+      "check_name": "Lower Deduction Certificate",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - certificate not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D5",
+      "check_name": "TDS Threshold Limit",
+      "status": "FAIL",
+      "confidence": 0.9,
+      "reasoning": "Above threshold: \u20b9590,000.00 > \u20b930,000 - TDS should apply",
+      "severity": "HIGH",
+      "requires_review": true
+    },
+    {
+      "check_id": "D6",
+      "check_name": "Aggregate Threshold Tracking",
+      "status": "PASS",
+      "confidence": 0.8,
+      "reasoning": "TDS not applicable - aggregate tracking not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D7",
+      "check_name": "TDS on GST Component",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - GST treatment not relevant",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D8",
+      "check_name": "Non-Resident TDS Rules",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Resident Indian vendor - non-resident rules not applicable",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D9",
+      "check_name": "TAN Validation",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - TAN not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D10",
+      "check_name": "Section 206AB Higher Rate",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - Section 206AB not relevant",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D11",
+      "check_name": "TDS Certificate Availability",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - certificate not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D12",
+      "check_name": "Quarterly Reconciliation",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - reconciliation not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "A6",
+      "check_name": "Seller in Vendor Registry",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Vendor found: TechSoft Solutions Private Limited (ID: VND001)",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "A7",
+      "check_name": "Buyer GSTIN Validation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Buyer GSTIN matches company GSTIN: 27AABCF9999K1ZX",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "VENDOR_STATUS",
+      "check_name": "Vendor Status Check",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Vendor status: ACTIVE",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "RELATED_PARTY",
+      "check_name": "Related Party Transaction Check",
+      "status": "WARNING",
+      "confidence": 0.9,
+      "reasoning": "Related party transaction detected. Vendor shares PAN AABCT1234F with other entities. Requires higher approval level.",
+      "severity": "MEDIUM",
+      "requires_review": true
+    },
+    {
+      "check_id": "C1",
+      "check_name": "Line Item Amount Calculation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "All line item amounts calculated correctly",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "C2",
+      "check_name": "Subtotal Matches Line Items",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Subtotal \u20b9500000.00 matches sum of line items",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "C3",
+      "check_name": "Tax Calculation Accuracy",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Total tax \u20b990000.00 calculated correctly",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "C10",
+      "check_name": "Total Amount Calculation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Total amount \u20b9590000.00 calculated correctly",
+      "severity": "CRITICAL",
+      "requires_review": false
+    },
+    {
+      "check_id": "A1",
+      "check_name": "Invoice Number Format",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Invoice number format valid: \"TS/MH/2024/001234\" (contains year identifier)",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "A2",
+      "check_name": "Duplicate Invoice Detection",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "No duplicate detected for invoice TS/MH/2024/001234",
+      "severity": "CRITICAL",
+      "requires_review": false
+    },
+    {
+      "check_id": "A3",
+      "check_name": "Sequential Invoice Number Analysis",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Invoice sequence acceptable: 1234 (gap of 0 from previous 1234)",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "A4",
+      "check_name": "Digital Signature Verification",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Digital authentication present: IRN QR code",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "A5",
+      "check_name": "Invoice Date Consistency",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Invoice date matches IRN date: 2024-09-15",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "A6",
+      "check_name": "Seller Verification",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Seller verified: TechSoft Solutions Private Limited matches vendor registry",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "A7",
+      "check_name": "Buyer GSTIN Verification",
+      "status": "FAIL",
+      "confidence": 0.95,
+      "reasoning": "Buyer GSTIN mismatch: Invoice shows 27AABCF9999K1ZX, company GSTIN is 27AABCU9603R1ZM",
+      "severity": "CRITICAL",
+      "requires_review": true
+    },
+    {
+      "check_id": "A8",
+      "check_name": "Tampering Detection",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Structured data format (json). No tampering concerns.",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B1",
+      "check_name": "GSTIN Format Validation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Both GSTINs valid: Seller 27AABCT1234F1ZP, Buyer 27AABCF9999K1ZX",
+      "severity": "CRITICAL",
+      "requires_review": false
+    },
+    {
+      "check_id": "B2",
+      "check_name": "GSTIN Active Status",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Seller GSTIN 27AABCT1234F1ZP is active in vendor registry",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "B3",
+      "check_name": "State Code Match",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "State code 27 matches seller state Maharashtra",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B4",
+      "check_name": "HSN/SAC Code Validity",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "All 1 HSN/SAC codes are valid",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B5",
+      "check_name": "HSN-Description Match",
+      "status": "FAIL",
+      "confidence": 0.8,
+      "reasoning": "Multiple HSN misclassifications detected (1 items)",
+      "severity": "HIGH",
+      "requires_review": true
+    },
+    {
+      "check_id": "B6",
+      "check_name": "GST Rate Match",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "All GST rates match HSN/SAC schedules",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "B7",
+      "check_name": "Tax Rate Equation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Intrastate: CGST (\u20b945000.00) = SGST (\u20b945000.00)",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B8",
+      "check_name": "Interstate vs Intrastate",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Intrastate supply (27): CGST+SGST correctly applied",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "B9",
+      "check_name": "Place of Supply",
+      "status": "WARNING",
+      "confidence": 0.75,
+      "reasoning": "Place of supply not specified on invoice",
+      "severity": "MEDIUM",
+      "requires_review": true
+    },
+    {
+      "check_id": "B10",
+      "check_name": "Reverse Charge Mechanism",
+      "status": "PASS",
+      "confidence": 0.85,
+      "reasoning": "RCM status appropriate: Not required",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B11",
+      "check_name": "Composition Scheme",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Regular GST dealer - normal taxation applies",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B12",
+      "check_name": "E-Invoice Mandate",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "E-invoice present (good practice)",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B13",
+      "check_name": "QR Code Verification",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "QR code present for verification",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B14",
+      "check_name": "IRN Hash Verification",
+      "status": "FAIL",
+      "confidence": 0.95,
+      "reasoning": "Invalid IRN format: 56 characters (expected 64)",
+      "severity": "HIGH",
+      "requires_review": true
+    },
+    {
+      "check_id": "B15",
+      "check_name": "E-Invoice Value Threshold",
+      "status": "PASS",
+      "confidence": 0.8,
+      "reasoning": "Invoice value \u20b9590,000.00: E-invoice status appropriate",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "B16",
+      "check_name": "Export Compliance",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Not an export invoice - export compliance not applicable",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B17",
+      "check_name": "SEZ Supply Validation",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Not a SEZ supply - SEZ rules not applicable",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "B18",
+      "check_name": "ITC Eligibility",
+      "status": "PASS",
+      "confidence": 0.85,
+      "reasoning": "Invoice eligible for ITC: \u20b990,000.00 (subject to supplier compliance)",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "E1",
+      "check_name": "Approval Level Determination",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Requires Level 5: CFO Approval (Retrospective invoice; Related party transaction). Amount: \u20b9590,000.00",
+      "severity": "MEDIUM",
+      "requires_review": true
+    },
+    {
+      "check_id": "E2",
+      "check_name": "Invoice Date Validity",
+      "status": "FAIL",
+      "confidence": 1.0,
+      "reasoning": "Invoice too old: 491 days (max: 180 days)",
+      "severity": "HIGH",
+      "requires_review": true
+    },
+    {
+      "check_id": "E3",
+      "check_name": "PO Reference Validation",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "PO reference present: PO-2024-IT-0456",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "E4",
+      "check_name": "Payment Terms Validation",
+      "status": "PASS",
+      "confidence": 0.85,
+      "reasoning": "Payment terms acceptable: Net 30",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "E5",
+      "check_name": "Duplicate Invoice Check",
+      "status": "PASS",
+      "confidence": 0.7,
+      "reasoning": "No duplicate detected for TS/MH/2024/001234. Note: Full check requires database lookup.",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "E6",
+      "check_name": "FY Boundary Validation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Invoice within current FY: 2024-04-01 to 2025-03-31",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "D1",
+      "check_name": "TDS Applicability",
+      "status": "FAIL",
+      "confidence": 0.85,
+      "reasoning": "TDS should apply but not marked. Reasons: Amount \u20b9590,000.00 exceeds basic threshold; Service detected: Software Development Services ",
+      "severity": "CRITICAL",
+      "requires_review": true
+    },
+    {
+      "check_id": "D2",
+      "check_name": "TDS Section Determination",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - section determination not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D3",
+      "check_name": "TDS Rate (PAN-based)",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - rate validation not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D4",
+      "check_name": "Lower Deduction Certificate",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - certificate not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D5",
+      "check_name": "TDS Threshold Limit",
+      "status": "FAIL",
+      "confidence": 0.9,
+      "reasoning": "Above threshold: \u20b9590,000.00 > \u20b930,000 - TDS should apply",
+      "severity": "HIGH",
+      "requires_review": true
+    },
+    {
+      "check_id": "D6",
+      "check_name": "Aggregate Threshold Tracking",
+      "status": "PASS",
+      "confidence": 0.8,
+      "reasoning": "TDS not applicable - aggregate tracking not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D7",
+      "check_name": "TDS on GST Component",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - GST treatment not relevant",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D8",
+      "check_name": "Non-Resident TDS Rules",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "Resident Indian vendor - non-resident rules not applicable",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D9",
+      "check_name": "TAN Validation",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - TAN not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D10",
+      "check_name": "Section 206AB Higher Rate",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - Section 206AB not relevant",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D11",
+      "check_name": "TDS Certificate Availability",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - certificate not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "D12",
+      "check_name": "Quarterly Reconciliation",
+      "status": "PASS",
+      "confidence": 0.9,
+      "reasoning": "TDS not applicable - reconciliation not required",
+      "severity": "LOW",
+      "requires_review": false
+    },
+    {
+      "check_id": "A6",
+      "check_name": "Seller in Vendor Registry",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Vendor found: TechSoft Solutions Private Limited (ID: VND001)",
+      "severity": "MEDIUM",
+      "requires_review": false
+    },
+    {
+      "check_id": "A7",
+      "check_name": "Buyer GSTIN Validation",
+      "status": "PASS",
+      "confidence": 1.0,
+      "reasoning": "Buyer GSTIN matches company GSTIN: 27AABCF9999K1ZX",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "VENDOR_STATUS",
+      "check_name": "Vendor Status Check",
+      "status": "PASS",
+      "confidence": 0.95,
+      "reasoning": "Vendor status: ACTIVE",
+      "severity": "HIGH",
+      "requires_review": false
+    },
+    {
+      "check_id": "RELATED_PARTY",
+      "check_name": "Related Party Transaction Check",
+      "status": "WARNING",
+      "confidence": 0.9,
+      "reasoning": "Related party transaction detected. Vendor shares PAN AABCT1234F with other entities. Requires higher approval level.",
+      "severity": "MEDIUM",
+      "requires_review": true
+    }
+  ],
+  "ambiguous_cases": [],
+  "escalation_reasons": [
+    "6 checks failed with 92% confidence",
+    "6 checks failed with 92% confidence",
+    "6 checks failed with 92% confidence",
+    "6 checks failed with 92% confidence"
+  ],
+  "errors": [],
+  "document_result": {
+    "category": "A",
+    "checks": [
+      {
+        "check_id": "A1",
+        "check_name": "Invoice Number Format",
+        "status": "PASS",
+        "confidence": 1.0,
+        "reasoning": "Invoice number format valid: \"TS/MH/2024/001234\" (contains year identifier)",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "A2",
+        "check_name": "Duplicate Invoice Detection",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "No duplicate detected for invoice TS/MH/2024/001234",
+        "severity": "CRITICAL",
+        "requires_review": false
+      },
+      {
+        "check_id": "A3",
+        "check_name": "Sequential Invoice Number Analysis",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "Invoice sequence acceptable: 1234 (gap of 0 from previous 1234)",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "A4",
+        "check_name": "Digital Signature Verification",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "Digital authentication present: IRN QR code",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "A5",
+        "check_name": "Invoice Date Consistency",
+        "status": "PASS",
+        "confidence": 1.0,
+        "reasoning": "Invoice date matches IRN date: 2024-09-15",
+        "severity": "MEDIUM",
+        "requires_review": false
+      },
+      {
+        "check_id": "A6",
+        "check_name": "Seller Verification",
+        "status": "PASS",
+        "confidence": 0.95,
+        "reasoning": "Seller verified: TechSoft Solutions Private Limited matches vendor registry",
+        "severity": "MEDIUM",
+        "requires_review": false
+      },
+      {
+        "check_id": "A7",
+        "check_name": "Buyer GSTIN Verification",
+        "status": "FAIL",
+        "confidence": 0.95,
+        "reasoning": "Buyer GSTIN mismatch: Invoice shows 27AABCF9999K1ZX, company GSTIN is 27AABCU9603R1ZM",
+        "severity": "CRITICAL",
+        "requires_review": true
+      },
+      {
+        "check_id": "A8",
+        "check_name": "Tampering Detection",
+        "status": "PASS",
+        "confidence": 0.95,
+        "reasoning": "Structured data format (json). No tampering concerns.",
+        "severity": "MEDIUM",
+        "requires_review": false
+      }
+    ]
+  },
+  "arithmetic_result": {
+    "category": "C",
+    "checks": [
+      {
+        "check_id": "C1",
+        "check_name": "Line Item Amount Calculation",
+        "status": "PASS",
+        "confidence": 1.0,
+        "reasoning": "All line item amounts calculated correctly",
+        "severity": "MEDIUM",
+        "requires_review": false
+      },
+      {
+        "check_id": "C2",
+        "check_name": "Subtotal Matches Line Items",
+        "status": "PASS",
+        "confidence": 1.0,
+        "reasoning": "Subtotal \u20b9500000.00 matches sum of line items",
+        "severity": "MEDIUM",
+        "requires_review": false
+      },
+      {
+        "check_id": "C3",
+        "check_name": "Tax Calculation Accuracy",
+        "status": "PASS",
+        "confidence": 1.0,
+        "reasoning": "Total tax \u20b990000.00 calculated correctly",
+        "severity": "HIGH",
+        "requires_review": false
+      },
+      {
+        "check_id": "C10",
+        "check_name": "Total Amount Calculation",
+        "status": "PASS",
+        "confidence": 1.0,
+        "reasoning": "Total amount \u20b9590000.00 calculated correctly",
+        "severity": "CRITICAL",
+        "requires_review": false
+      }
+    ]
+  },
+  "gst_result": {
+    "category": "B",
+    "checks": [
+      {
+        "check_id": "B1",
+        "check_name": "GSTIN Format Validation",
+        "status": "PASS",
+        "confidence": 1.0,
+        "reasoning": "Both GSTINs valid: Seller 27AABCT1234F1ZP, Buyer 27AABCF9999K1ZX",
+        "severity": "CRITICAL",
+        "requires_review": false
+      },
+      {
+        "check_id": "B2",
+        "check_name": "GSTIN Active Status",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "Seller GSTIN 27AABCT1234F1ZP is active in vendor registry",
+        "severity": "HIGH",
+        "requires_review": false
+      },
+      {
+        "check_id": "B3",
+        "check_name": "State Code Match",
+        "status": "PASS",
+        "confidence": 0.95,
+        "reasoning": "State code 27 matches seller state Maharashtra",
+        "severity": "MEDIUM",
+        "requires_review": false
+      },
+      {
+        "check_id": "B4",
+        "check_name": "HSN/SAC Code Validity",
+        "status": "PASS",
+        "confidence": 0.95,
+        "reasoning": "All 1 HSN/SAC codes are valid",
+        "severity": "MEDIUM",
+        "requires_review": false
+      },
+      {
+        "check_id": "B5",
+        "check_name": "HSN-Description Match",
+        "status": "FAIL",
+        "confidence": 0.8,
+        "reasoning": "Multiple HSN misclassifications detected (1 items)",
+        "severity": "HIGH",
+        "requires_review": true
+      },
+      {
+        "check_id": "B6",
+        "check_name": "GST Rate Match",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "All GST rates match HSN/SAC schedules",
+        "severity": "HIGH",
+        "requires_review": false
+      },
+      {
+        "check_id": "B7",
+        "check_name": "Tax Rate Equation",
+        "status": "PASS",
+        "confidence": 1.0,
+        "reasoning": "Intrastate: CGST (\u20b945000.00) = SGST (\u20b945000.00)",
+        "severity": "MEDIUM",
+        "requires_review": false
+      },
+      {
+        "check_id": "B8",
+        "check_name": "Interstate vs Intrastate",
+        "status": "PASS",
+        "confidence": 1.0,
+        "reasoning": "Intrastate supply (27): CGST+SGST correctly applied",
+        "severity": "HIGH",
+        "requires_review": false
+      },
+      {
+        "check_id": "B9",
+        "check_name": "Place of Supply",
+        "status": "WARNING",
+        "confidence": 0.75,
+        "reasoning": "Place of supply not specified on invoice",
+        "severity": "MEDIUM",
+        "requires_review": true
+      },
+      {
+        "check_id": "B10",
+        "check_name": "Reverse Charge Mechanism",
+        "status": "PASS",
+        "confidence": 0.85,
+        "reasoning": "RCM status appropriate: Not required",
+        "severity": "MEDIUM",
+        "requires_review": false
+      },
+      {
+        "check_id": "B11",
+        "check_name": "Composition Scheme",
+        "status": "PASS",
+        "confidence": 0.95,
+        "reasoning": "Regular GST dealer - normal taxation applies",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "B12",
+        "check_name": "E-Invoice Mandate",
+        "status": "PASS",
+        "confidence": 0.95,
+        "reasoning": "E-invoice present (good practice)",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "B13",
+        "check_name": "QR Code Verification",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "QR code present for verification",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "B14",
+        "check_name": "IRN Hash Verification",
+        "status": "FAIL",
+        "confidence": 0.95,
+        "reasoning": "Invalid IRN format: 56 characters (expected 64)",
+        "severity": "HIGH",
+        "requires_review": true
+      },
+      {
+        "check_id": "B15",
+        "check_name": "E-Invoice Value Threshold",
+        "status": "PASS",
+        "confidence": 0.8,
+        "reasoning": "Invoice value \u20b9590,000.00: E-invoice status appropriate",
+        "severity": "MEDIUM",
+        "requires_review": false
+      },
+      {
+        "check_id": "B16",
+        "check_name": "Export Compliance",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "Not an export invoice - export compliance not applicable",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "B17",
+        "check_name": "SEZ Supply Validation",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "Not a SEZ supply - SEZ rules not applicable",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "B18",
+        "check_name": "ITC Eligibility",
+        "status": "PASS",
+        "confidence": 0.85,
+        "reasoning": "Invoice eligible for ITC: \u20b990,000.00 (subject to supplier compliance)",
+        "severity": "MEDIUM",
+        "requires_review": false
+      }
+    ]
+  },
+  "vendor_result": {
+    "category": "A",
+    "checks": [
+      {
+        "check_id": "A6",
+        "check_name": "Seller in Vendor Registry",
+        "status": "PASS",
+        "confidence": 0.95,
+        "reasoning": "Vendor found: TechSoft Solutions Private Limited (ID: VND001)",
+        "severity": "MEDIUM",
+        "requires_review": false
+      },
+      {
+        "check_id": "A7",
+        "check_name": "Buyer GSTIN Validation",
+        "status": "PASS",
+        "confidence": 1.0,
+        "reasoning": "Buyer GSTIN matches company GSTIN: 27AABCF9999K1ZX",
+        "severity": "HIGH",
+        "requires_review": false
+      },
+      {
+        "check_id": "VENDOR_STATUS",
+        "check_name": "Vendor Status Check",
+        "status": "PASS",
+        "confidence": 0.95,
+        "reasoning": "Vendor status: ACTIVE",
+        "severity": "HIGH",
+        "requires_review": false
+      },
+      {
+        "check_id": "RELATED_PARTY",
+        "check_name": "Related Party Transaction Check",
+        "status": "WARNING",
+        "confidence": 0.9,
+        "reasoning": "Related party transaction detected. Vendor shares PAN AABCT1234F with other entities. Requires higher approval level.",
+        "severity": "MEDIUM",
+        "requires_review": true
+      }
+    ]
+  },
+  "tds_result": {
+    "category": "D",
+    "checks": [
+      {
+        "check_id": "D1",
+        "check_name": "TDS Applicability",
+        "status": "FAIL",
+        "confidence": 0.85,
+        "reasoning": "TDS should apply but not marked. Reasons: Amount \u20b9590,000.00 exceeds basic threshold; Service detected: Software Development Services ",
+        "severity": "CRITICAL",
+        "requires_review": true
+      },
+      {
+        "check_id": "D2",
+        "check_name": "TDS Section Determination",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "TDS not applicable - section determination not required",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "D3",
+        "check_name": "TDS Rate (PAN-based)",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "TDS not applicable - rate validation not required",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "D4",
+        "check_name": "Lower Deduction Certificate",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "TDS not applicable - certificate not required",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "D5",
+        "check_name": "TDS Threshold Limit",
+        "status": "FAIL",
+        "confidence": 0.9,
+        "reasoning": "Above threshold: \u20b9590,000.00 > \u20b930,000 - TDS should apply",
+        "severity": "HIGH",
+        "requires_review": true
+      },
+      {
+        "check_id": "D6",
+        "check_name": "Aggregate Threshold Tracking",
+        "status": "PASS",
+        "confidence": 0.8,
+        "reasoning": "TDS not applicable - aggregate tracking not required",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "D7",
+        "check_name": "TDS on GST Component",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "TDS not applicable - GST treatment not relevant",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "D8",
+        "check_name": "Non-Resident TDS Rules",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "Resident Indian vendor - non-resident rules not applicable",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "D9",
+        "check_name": "TAN Validation",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "TDS not applicable - TAN not required",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "D10",
+        "check_name": "Section 206AB Higher Rate",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "TDS not applicable - Section 206AB not relevant",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "D11",
+        "check_name": "TDS Certificate Availability",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "TDS not applicable - certificate not required",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "D12",
+        "check_name": "Quarterly Reconciliation",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "TDS not applicable - reconciliation not required",
+        "severity": "LOW",
+        "requires_review": false
+      }
+    ]
+  },
+  "policy_result": {
+    "category": "E",
+    "checks": [
+      {
+        "check_id": "E1",
+        "check_name": "Approval Level Determination",
+        "status": "PASS",
+        "confidence": 0.95,
+        "reasoning": "Requires Level 5: CFO Approval (Retrospective invoice; Related party transaction). Amount: \u20b9590,000.00",
+        "severity": "MEDIUM",
+        "requires_review": true
+      },
+      {
+        "check_id": "E2",
+        "check_name": "Invoice Date Validity",
+        "status": "FAIL",
+        "confidence": 1.0,
+        "reasoning": "Invoice too old: 491 days (max: 180 days)",
+        "severity": "HIGH",
+        "requires_review": true
+      },
+      {
+        "check_id": "E3",
+        "check_name": "PO Reference Validation",
+        "status": "PASS",
+        "confidence": 0.9,
+        "reasoning": "PO reference present: PO-2024-IT-0456",
+        "severity": "MEDIUM",
+        "requires_review": false
+      },
+      {
+        "check_id": "E4",
+        "check_name": "Payment Terms Validation",
+        "status": "PASS",
+        "confidence": 0.85,
+        "reasoning": "Payment terms acceptable: Net 30",
+        "severity": "LOW",
+        "requires_review": false
+      },
+      {
+        "check_id": "E5",
+        "check_name": "Duplicate Invoice Check",
+        "status": "PASS",
+        "confidence": 0.7,
+        "reasoning": "No duplicate detected for TS/MH/2024/001234. Note: Full check requires database lookup.",
+        "severity": "MEDIUM",
+        "requires_review": false
+      },
+      {
+        "check_id": "E6",
+        "check_name": "FY Boundary Validation",
+        "status": "PASS",
+        "confidence": 1.0,
+        "reasoning": "Invoice within current FY: 2024-04-01 to 2025-03-31",
+        "severity": "MEDIUM",
+        "requires_review": false
+      }
+    ]
+  },
+  "passed_checks": 44,
+  "failed_checks": 6,
+  "warning_checks": 2,
+  "requires_llm_reasoning": false,
+  "escalation_needed": true,
+  "overall_status": "FAIL",
+  "confidence_score": 0.9173076923076919,
+  "final_decision": "**Overall Compliance Status:** NON-COMPLIANT\n\n**Key Reasoning:** The invoice failed multiple checks, including Buyer GSTIN Verification, HSN-Description Match, Place of Supply, IRN Hash Verification, and Invoice Date Validity. These failures indicate significant discrepancies and potential non-compliance with regulatory requirements.\n\n**Recommendation for Action:** The invoice requires immediate review and correction to address the failed checks. The buyer and seller should verify the GSTIN, correct the HSN classifications, specify the place of supply, ensure the IRN format is correct, and update the invoice date to ensure compliance with regulatory requirements.",
+  "reasoning": "**Overall Compliance Status:** NON-COMPLIANT\n\n**Key Reasoning:** The invoice failed multiple checks, including Buyer GSTIN Verification, HSN-Description Match, Place of Supply, IRN Hash Verification, and Invoice Date Validity. These failures indicate significant discrepancies and potential non-compl",
+  "current_stage": "reporting"
+}
